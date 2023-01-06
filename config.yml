@@ -1,0 +1,25 @@
+title: 'Site test'
+baseline: ''
+baseurl: 'http://localhost:8000/'
+description: 'Site description'
+author:
+    name: 'Arnaud Ligny'
+    url: 'https://arnaudligny.fr'
+image: cecil-card.png
+output:
+    formats:
+        - name: algolia
+          mediatype: 'application/json'
+          filename: 'algolia'
+          extension: 'json'
+    pagetypeformats:
+        homepage: ['html', 'atom', 'algolia', 'json']
+        #page: ['html', 'algolia']
+algolia:
+  enabled: true
+  version: '@4'
+  autocomplete:
+    version: 0
+  application_id: 'N15M8DWZID'
+  search_api_key: '1fef5e20747e117945db156d00df3b9a'
+  index: 'documentation'
