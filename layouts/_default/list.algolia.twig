@@ -1,13 +1,13 @@
 {%- set section, balise = 'blog', 'h3' -%}
-{%- macro dataset(objectID, page, title, description = '', content, date, href, experimental) ~%}
+{%- macro dataset(objectID, page, title, href,description = '', content, date, experimental) ~%}
     {
     "objectID": "{{ objectID }}",
     "page": "{{ page }}",
-    "title": "{{ title }}"
+    "title": "{{ title }}",
 {#    "description": {{ description }},#}
 {#    "content": {{ content }},#}
 {#    "date": "{{ date }}",#}
-{#    "href": "{{ href }}",#}
+    "href": "{{ href }}"
 {#    "experimental": "{{ experimental }}"#}
     }
 {%- endmacro -%}
@@ -33,13 +33,14 @@
                 {{- _self.dataset(
                     p.id ~ '#' ~ anchor,
                     p.title,
-                    title
+                    title,
+                    p.path ~ '#' ~ anchor
                 ) -}}
                 {%- if not loop.last %},{% endif ~%}
                 {%- set count = count + 1 -%}
             {%- endif -%}
         {%- endfor -%}
-        {%- if not loop.last and count > 0 %},{% endif ~%}
+{#        {%- if not loop.last and count > 0 %},{% endif ~%}#}
     {%- endif -%}
 {%- endfor ~%}
 ]

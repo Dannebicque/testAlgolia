@@ -14,12 +14,11 @@ output:
           extension: 'json'
     pagetypeformats:
         homepage: ['html', 'atom', 'algolia', 'json']
-        #page: ['html', 'algolia']
 algolia:
   enabled: true
   version: '@4'
   autocomplete:
     version: 0
-  application_id: '**'
-  search_api_key: '**'
+  application_id: 'N15M8DWZID'
+  search_api_key: '1fef5e20747e117945db156d00df3b9a'
   index: 'documentation'
